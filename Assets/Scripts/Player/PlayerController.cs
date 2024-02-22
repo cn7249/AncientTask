@@ -23,8 +23,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        zoomAmount = 60f;
-        camCurXRot = 45f;
+        zoomAmount = 54f;
+        camCurXRot = -45f;
         camCurYRot = 180f;
     }
 
@@ -62,14 +62,14 @@ public class PlayerController : MonoBehaviour
         {
             mainCamera.fieldOfView = 30;
         }
-        else if (scrollY < 0 && mainCamera.fieldOfView >= 60)
+        else if (scrollY < 0 && mainCamera.fieldOfView >= 54)
         {
-            mainCamera.fieldOfView = 60;
+            mainCamera.fieldOfView = 54;
         }
         else
         {
             zoomAmount += -scrollY * zoomSensitivity;
-            mainCamera.fieldOfView = Mathf.Clamp(zoomAmount, 30, 60);
+            mainCamera.fieldOfView = Mathf.Clamp(zoomAmount, 30, 54);
         }
     }
 
